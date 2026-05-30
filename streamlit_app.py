@@ -137,9 +137,23 @@ html, body, [class*="css"] {
     font-size:24px !important;
 }
 
-/* INFO BOX */
+/* INFO BOX CUSTOM */
 .stAlert {
     border-radius:18px;
+    background: rgba(255,255,255,0.08) !important;
+    border: 1px solid rgba(216,180,254,0.25) !important;
+    backdrop-filter: blur(10px);
+}
+
+/* Warna tulisan pada st.info */
+.stAlert p {
+    color: #f5d0fe !important;
+    font-weight: 500;
+}
+
+/* Icon info */
+.stAlert svg {
+    fill: #d8b4fe !important;
 }
 
 /* HEADER (Diubah ke warna ungu muda/pink pastel soft) */
