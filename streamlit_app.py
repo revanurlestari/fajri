@@ -190,7 +190,7 @@ if st.session_state.menu is None:
 
     st.snow()
 
-    st.markdown("<div class='title'>🌌 ThermoCalcc ⚗️</div>", unsafe_allow_html=True)
+    st.markdown("<div class='title'> ThermoCalcc </div>", unsafe_allow_html=True)
 
     st.markdown(
         "<div class='subtitle'>Kalkulator Termodinamika Futuristik + Langkah Penyelesaian Interaktif</div>",
