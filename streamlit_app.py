@@ -4,7 +4,7 @@ import streamlit as st
 # CONFIG
 # =====================================
 st.set_page_config(
-    page_title="ThermoVerse",
+    page_title="ThermoCalcz",
     page_icon="🌌",
     layout="wide"
 )
