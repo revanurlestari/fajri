@@ -112,7 +112,7 @@ html, body, [class*="css"] {
 }
 
 /* =====================================
-   LABEL INPUT AGAR TERLIHAT JELAS
+   LABEL INPUT
 ===================================== */
 [data-testid="stWidgetLabel"] p {
     color: #ffffff !important;
