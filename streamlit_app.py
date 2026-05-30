@@ -137,7 +137,7 @@ html, body, [class*="css"] {
     font-size:24px !important;
 }
 
-/* INFO BOX CUSTOM */
+/* INFO BOX */
 .stAlert {
     border-radius:18px;
     background: rgba(255,255,255,0.08) !important;
