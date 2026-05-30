@@ -54,7 +54,7 @@ html, body, [class*="css"] {
 
 .subtitle {
     text-align:center;
-    color:#e2e8f0;
+    color:#cbd5e1;
     font-size:18px;
     margin-bottom:35px;
 }
