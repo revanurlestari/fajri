@@ -111,6 +111,26 @@ html, body, [class*="css"] {
     border-radius:15px !important;
 }
 
+/* =====================================
+   LABEL INPUT AGAR TERLIHAT JELAS
+===================================== */
+[data-testid="stWidgetLabel"] p {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    font-size: 16px !important;
+    text-shadow: 0 0 8px rgba(255,255,255,0.4);
+}
+
+.stNumberInput label {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+}
+
+.stTextInput label {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+}
+
 /* LATEX (Diubah ke warna ungu muda/pink pastel soft) */
 .katex {
     color:#f5d0fe !important;
