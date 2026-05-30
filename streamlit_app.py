@@ -4,13 +4,13 @@ import streamlit as st
 # CONFIG
 # =====================================
 st.set_page_config(
-    page_title="ThermoCalcz",
+    page_title="ThermoCalcc",
     page_icon="🌌",
     layout="wide"
 )
 
 # =====================================
-# CSS FUTURISTIK SUPER UPGRADE (UPDATED COLORS)
+# CSS FUTURISTIK
 # =====================================
 st.markdown("""
 <style>
@@ -190,7 +190,7 @@ if st.session_state.menu is None:
 
     st.snow()
 
-    st.markdown("<div class='title'>🌌 ThermoVerse ⚗️</div>", unsafe_allow_html=True)
+    st.markdown("<div class='title'>🌌 ThermoCalcc ⚗️</div>", unsafe_allow_html=True)
 
     st.markdown(
         "<div class='subtitle'>Kalkulator Termodinamika Futuristik + Langkah Penyelesaian Interaktif</div>",
