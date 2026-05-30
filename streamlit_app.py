@@ -19,27 +19,37 @@ html, body, [class*="css"] {
     font-family: 'Poppins', sans-serif;
 }
 
-/* BACKGROUND (Diubah dari biru ke kombinasi ungu-gelap/magenta) */
+/* BACKGROUND */
 .stApp {
-    background: linear-gradient(-45deg, #020617, #1e1b4b, #0f172a, #581c87, #3b0764);
+    background: linear-gradient(-45deg,
+    #020617,
+    #1e1b4b,
+    #0f172a,
+    #581c87,
+    #3b0764);
     background-size: 500% 500%;
     animation: gradientBG 18s ease infinite;
-    color:white;
+    color: white;
 }
 
-/* ANIMASI BACKGROUND */
 @keyframes gradientBG {
     0% {background-position:0% 50%;}
     50% {background-position:100% 50%;}
     100% {background-position:0% 50%;}
 }
 
-/* TITLE (Tetap dipertahankan sesuai permintaan) */
+/* TITLE */
 .title {
     text-align:center;
     font-size:68px;
     font-weight:900;
-    background: linear-gradient(to right,#93c5fd,#dbeafe,#60a5fa);
+    background: linear-gradient(
+    to right,
+    #93c5fd,
+    #dbeafe,
+    #60a5fa
+    );
+
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
     text-shadow:0 0 30px rgba(59,130,246,.8);
@@ -72,7 +82,6 @@ html, body, [class*="css"] {
     margin-top:20px;
 }
 
-/* FADE */
 @keyframes fadeIn {
     from {
         opacity:0;
@@ -84,8 +93,8 @@ html, body, [class*="css"] {
     }
 }
 
-/* BUTTON (Diubah ke gradasi Ungu ke Pink/Magenta Neon) */
-.stButton>button {
+/* BUTTON */
+.stButton > button {
     width:100%;
     padding:15px;
     border-radius:18px;
@@ -93,45 +102,38 @@ html, body, [class*="css"] {
     font-size:16px;
     border:none;
     color:white;
-    background: linear-gradient(135deg, #7c3aed, #d946ef);
-    box-shadow:0 0 18px rgba(217, 70, 239, 0.5);
+    background: linear-gradient(
+    135deg,
+    #7c3aed,
+    #d946ef
+    );
+
+    box-shadow:0 0 18px rgba(217,70,239,0.5);
     transition:all .3s ease;
 }
 
-.stButton>button:hover {
+.stButton > button:hover {
     transform:translateY(-6px) scale(1.02);
-    box-shadow:0 0 30px rgba(217, 70, 239, 0.9);
+    box-shadow:0 0 30px rgba(217,70,239,0.9);
 }
 
 /* INPUT */
 .stNumberInput input,
 .stTextInput input {
-    background: rgba(255,255,255,0.08) !important;
-    color:black !important;
+    background: rgba(255,255,255,0.12) !important;
+    color: white !important;
     border-radius:15px !important;
+    border:1px solid rgba(255,255,255,.25) !important;
 }
 
-/* =====================================
-   LABEL INPUT
-===================================== */
+/* LABEL INPUT */
 [data-testid="stWidgetLabel"] p {
-    color: #ffffff !important;
-    font-weight: 700 !important;
-    font-size: 16px !important;
-    text-shadow: 0 0 8px rgba(255,255,255,0.4);
+    color:#ffffff !important;
+    font-weight:700 !important;
+    font-size:16px !important;
 }
 
-.stNumberInput label {
-    color: #ffffff !important;
-    font-weight: 700 !important;
-}
-
-.stTextInput label {
-    color: #ffffff !important;
-    font-weight: 700 !important;
-}
-
-/* LATEX (Diubah ke warna ungu muda/pink pastel soft) */
+/* LATEX */
 .katex {
     color:#f5d0fe !important;
     font-size:24px !important;
@@ -141,22 +143,15 @@ html, body, [class*="css"] {
 .stAlert {
     border-radius:18px;
     background: rgba(255,255,255,0.08) !important;
-    border: 1px solid rgba(216,180,254,0.25) !important;
+    border:1px solid rgba(216,180,254,0.25) !important;
     backdrop-filter: blur(10px);
 }
 
-/* Warna tulisan pada st.info */
 .stAlert p {
-    color: #f5d0fe !important;
-    font-weight: 500;
+    color:#f5d0fe !important;
 }
 
-/* Icon info */
-.stAlert svg {
-    fill: #d8b4fe !important;
-}
-
-/* HEADER (Diubah ke warna ungu muda/pink pastel soft) */
+/* HEADER */
 h1,h2,h3 {
     color:#f5d0fe;
 }
@@ -190,10 +185,18 @@ if st.session_state.menu is None:
 
     st.snow()
 
-    st.markdown("<div class='title'> ThermoCalcc </div>", unsafe_allow_html=True)
+    st.markdown(
+        "<div class='title'>ThermoCalcc</div>",
+        unsafe_allow_html=True
+    )
 
     st.markdown(
-        "<div class='subtitle'>Kalkulator Termodinamika Futuristik + Langkah Penyelesaian Interaktif</div>",
+        """
+        <div class='subtitle'>
+        Kalkulator Termodinamika Futuristik
+        + Langkah Penyelesaian Interaktif
+        </div>
+        """,
         unsafe_allow_html=True
     )
 
@@ -206,7 +209,7 @@ if st.session_state.menu is None:
                 st.rerun()
 
 # =====================================
-# CALCULATOR PAGE
+# PAGE CALCULATOR
 # =====================================
 else:
 
@@ -218,14 +221,14 @@ else:
 
     st.header(f"⚗️ {menu}")
     st.divider()
-
-    # =====================================
+        # =====================================
     # 1 HUKUM 1 TERMODINAMIKA
     # =====================================
     if menu == "Hukum 1 Termodinamika":
 
         st.info("""
-Hukum 1 Termodinamika menyatakan bahwa energi tidak dapat diciptakan maupun dimusnahkan,
+Hukum 1 Termodinamika menyatakan bahwa energi
+tidak dapat diciptakan maupun dimusnahkan,
 melainkan hanya berubah bentuk.
 """)
 
@@ -235,6 +238,7 @@ melainkan hanya berubah bentuk.
         W = st.number_input("W (kJ)", value=0.0)
 
         if st.button("Hitung"):
+
             hasil = Q - W
 
             st.balloons()
@@ -255,7 +259,7 @@ melainkan hanya berubah bentuk.
             ΔU = {Q} − {W}<br><br>
 
             <b>Hasil:</b><br>
-            ΔU = <b>{hasil:.3f} kJ</b>
+            ΔU = <b>{hasil:.4f} kJ</b>
 
             </div>
             """, unsafe_allow_html=True)
@@ -266,8 +270,9 @@ melainkan hanya berubah bentuk.
     elif menu == "Usaha":
 
         st.info("""
-Usaha dalam termodinamika adalah energi yang digunakan sistem
-untuk melakukan kerja akibat perubahan volume.
+Usaha dalam termodinamika adalah energi
+yang digunakan sistem untuk melakukan kerja
+akibat perubahan volume pada tekanan tetap.
 """)
 
         st.latex(r"W = P \cdot \Delta V")
@@ -293,7 +298,7 @@ untuk melakukan kerja akibat perubahan volume.
 
             W = {P} × {dV}<br><br>
 
-            W = <b>{hasil:.3f} J</b>
+            W = <b>{hasil:.4f} J</b>
 
             </div>
             """, unsafe_allow_html=True)
@@ -304,11 +309,12 @@ untuk melakukan kerja akibat perubahan volume.
     elif menu == "Kalor":
 
         st.info("""
-Kalor adalah energi panas yang berpindah dari benda bersuhu tinggi
+Kalor adalah energi panas
+yang berpindah dari benda bersuhu tinggi
 ke benda bersuhu rendah.
 """)
 
-        st.latex(r"Q = m c \Delta T")
+        st.latex(r"Q = mc\Delta T")
 
         m = st.number_input("m (g)", value=0.0)
         c = st.number_input("c (J/g°C)", value=0.0)
@@ -328,12 +334,12 @@ ke benda bersuhu rendah.
             Q = m × c × ΔT <br><br>
 
             m = {m} g<br>
-            c = {c} J/g·K<br>
+            c = {c} J/g°C<br>
             ΔT = {dT} K<br><br>
 
             Q = {m} × {c} × {dT}<br><br>
 
-            Q = <b>{hasil:.3f} J</b>
+            Q = <b>{hasil:.4f} J</b>
 
             </div>
             """, unsafe_allow_html=True)
@@ -344,21 +350,21 @@ ke benda bersuhu rendah.
     elif menu == "Entalpi":
 
         st.info("""
-Entalpi adalah total energi panas dalam suatu sistem
-pada tekanan tetap.
+Entalpi adalah total energi panas
+dalam suatu sistem pada tekanan tetap.
 """)
 
         st.latex(r"\Delta H = \Delta U + \Delta nRT")
 
-        dU = st.number_input("ΔU", value=0.0)
-        dn = st.number_input("Δn", value=0.0)
+        dU = st.number_input("ΔU (kJ)", value=0.0)
+        dn = st.number_input("Δn gas (mol)", value=0.0)
         T = st.number_input("T (K)", value=0.0)
 
         R = 0.008314
 
         if st.button("Hitung"):
 
-            hasil = dU + dn * R * T
+            hasil = dU + (dn * R * T)
 
             st.balloons()
 
@@ -369,14 +375,15 @@ pada tekanan tetap.
 
             ΔH = ΔU + ΔnRT <br><br>
 
-            ΔU = {dU}<br>
-            Δn = {dn}<br>
+            ΔU = {dU} kJ<br>
+            Δn = {dn} mol<br>
             T = {T} K<br>
-            R = 0.008314<br><br>
+            R = {R}<br><br>
 
-            ΔH = {dU} + ({dn} × 0.008314 × {T})<br><br>
+            ΔH = {dU} +
+            ({dn} × {R} × {T})<br><br>
 
-            ΔH = <b>{hasil:.3f} kJ</b>
+            ΔH = <b>{hasil:.4f} kJ</b>
 
             </div>
             """, unsafe_allow_html=True)
@@ -387,17 +394,29 @@ pada tekanan tetap.
     elif menu == "Hukum Hess":
 
         st.info("""
-Hukum Hess menyatakan bahwa perubahan entalpi total
+Hukum Hess menyatakan bahwa
+perubahan entalpi total
 tidak bergantung pada jalur reaksi.
 """)
 
-        st.latex(r"\Delta H = \sum \Delta H")
+        st.latex(
+            r"\Delta H_{reaksi}"
+            r"=\sum \Delta H_{tahap}"
+        )
 
-        data = st.text_input("Masukkan ΔH (pisah koma)", "10,-20,30")
+        data = st.text_input(
+            "Masukkan ΔH (pisah koma)",
+            "10,-20,30"
+        )
 
         if st.button("Hitung"):
 
-            arr = [float(x) for x in data.split(",")]
+            arr = [
+                float(x)
+                for x in data.split(",")
+            ]
+
+            hasil = sum(arr)
 
             st.balloons()
 
@@ -408,46 +427,69 @@ tidak bergantung pada jalur reaksi.
 
             Data ΔH = {arr}<br><br>
 
-            ΣΔH = <b>{sum(arr):.3f} kJ</b>
+            ΣΔH = <b>{hasil:.4f} kJ</b>
 
             </div>
             """, unsafe_allow_html=True)
-
-    # =====================================
+                # =====================================
     # 6 ΔH REAKSI
     # =====================================
     elif menu == "ΔH Reaksi":
 
         st.info("""
-ΔH reaksi menunjukkan perubahan kalor selama reaksi kimia berlangsung.
+ΔH reaksi menunjukkan perubahan kalor
+selama reaksi kimia berlangsung.
 """)
 
-        st.latex(r"\Delta H = \sum Hf_{produk} - \sum Hf_{reaktan}")
+        st.latex(
+            r"\Delta H"
+            r"="
+            r"\sum Hf_{produk}"
+            r"-"
+            r"\sum Hf_{reaktan}"
+        )
 
-        p = st.text_input("Produk")
-        r = st.text_input("Reaktan")
+        p = st.text_input(
+            "ΔHf Produk (pisah koma)",
+            "100,200"
+        )
+
+        r = st.text_input(
+            "ΔHf Reaktan (pisah koma)",
+            "50,75"
+        )
 
         if st.button("Hitung") and p and r:
 
-            p = [float(x) for x in p.split(",")]
-            r = [float(x) for x in r.split(",")]
+            try:
+                p_list = [float(x) for x in p.split(",")]
+                r_list = [float(x) for x in r.split(",")]
 
-            hasil = sum(p) - sum(r)
+                hasil = sum(p_list) - sum(r_list)
 
-            st.balloons()
+                st.balloons()
 
-            st.markdown(f"""
-            <div class='result'>
+                st.markdown(f"""
+                <div class='result'>
 
-            <h3>Langkah Penyelesaian</h3>
+                <h3>Langkah Penyelesaian</h3>
 
-            ΣProduk = {sum(p)}<br>
-            ΣReaktan = {sum(r)}<br><br>
+                ΣProduk = {sum(p_list):.4f}<br>
+                ΣReaktan = {sum(r_list):.4f}<br><br>
 
-            ΔH = <b>{hasil:.3f} kJ/mol</b>
+                ΔH = {sum(p_list):.4f}
+                −
+                {sum(r_list):.4f}<br><br>
 
-            </div>
-            """, unsafe_allow_html=True)
+                ΔH = <b>{hasil:.4f} kJ/mol</b>
+
+                </div>
+                """, unsafe_allow_html=True)
+
+            except:
+                st.error(
+                    "Masukkan angka dengan format benar."
+                )
 
     # =====================================
     # 7 ENERGI GIBBS
@@ -455,19 +497,31 @@ tidak bergantung pada jalur reaksi.
     elif menu == "Energi Gibbs":
 
         st.info("""
-Energi Gibbs digunakan untuk menentukan apakah suatu reaksi
+Energi Gibbs digunakan
+untuk menentukan apakah suatu reaksi
 berlangsung spontan atau tidak.
 """)
 
         st.latex(r"\Delta G = \Delta H - T\Delta S")
 
-        dH = st.number_input("ΔH", value=0.0)
-        T = st.number_input("T", value=0.0)
-        dS = st.number_input("ΔS", value=0.0)
+        dH = st.number_input(
+            "ΔH (kJ/mol)",
+            value=0.0
+        )
+
+        T = st.number_input(
+            "T (K)",
+            value=0.0
+        )
+
+        dS = st.number_input(
+            "ΔS (J/mol·K)",
+            value=0.0
+        )
 
         if st.button("Hitung"):
 
-            hasil = dH - T * dS
+            hasil = dH - ((T * dS) / 1000)
 
             st.balloons()
 
@@ -478,11 +532,15 @@ berlangsung spontan atau tidak.
 
             ΔG = ΔH − TΔS <br><br>
 
-            ΔH = {dH}<br>
-            T = {T}<br>
-            ΔS = {dS}<br><br>
+            ΔH = {dH} kJ/mol<br>
+            T = {T} K<br>
+            ΔS = {dS} J/mol·K<br><br>
 
-            ΔG = <b>{hasil:.3f} kJ</b>
+            ΔG = {dH}
+            −
+            ({T} × {dS} / 1000)<br><br>
+
+            ΔG = <b>{hasil:.4f} kJ/mol</b>
 
             </div>
             """, unsafe_allow_html=True)
@@ -493,13 +551,21 @@ berlangsung spontan atau tidak.
     elif menu == "Entropi":
 
         st.info("""
-Entropi adalah ukuran tingkat ketidakteraturan suatu sistem.
+Entropi adalah ukuran
+tingkat ketidakteraturan suatu sistem.
 """)
 
-        st.latex(r"\Delta S = Q/T")
+        st.latex(r"\Delta S = \frac{Q}{T}")
 
-        Q = st.number_input("Q", value=0.0)
-        T = st.number_input("T", value=0.0)
+        Q = st.number_input(
+            "Q (J)",
+            value=0.0
+        )
+
+        T = st.number_input(
+            "T (K)",
+            value=0.0
+        )
 
         if st.button("Hitung"):
 
@@ -519,10 +585,14 @@ Entropi adalah ukuran tingkat ketidakteraturan suatu sistem.
 
                 ΔS = Q / T <br><br>
 
-                Q = {Q}<br>
-                T = {T}<br><br>
+                Q = {Q} J<br>
+                T = {T} K<br><br>
 
-                ΔS = <b>{hasil:.3f} kJ/K</b>
+                ΔS = {Q}
+                /
+                {T}<br><br>
+
+                ΔS = <b>{hasil:.4f} J/K</b>
 
                 </div>
                 """, unsafe_allow_html=True)
@@ -533,40 +603,67 @@ Entropi adalah ukuran tingkat ketidakteraturan suatu sistem.
     elif menu == "Gas Ideal":
 
         st.info("""
-Gas ideal adalah model gas teoritis yang partikel-partikelnya
-tidak memiliki gaya tarik dan tumbukannya elastis sempurna.
+Gas ideal adalah model gas teoritis
+yang partikel-partikelnya
+tidak memiliki gaya tarik
+dan tumbukannya elastis sempurna.
 """)
 
         st.latex(r"PV = nRT")
 
-        n = st.number_input("n", value=0.0)
-        T = st.number_input("T", value=0.0)
-        V = st.number_input("V", value=0.0)
+        n = st.number_input(
+            "n (mol)",
+            value=0.0
+        )
+
+        T = st.number_input(
+            "T (K)",
+            value=0.0
+        )
+
+        V = st.number_input(
+            "V (L)",
+            value=0.0
+        )
 
         R = 0.0821
 
         if st.button("Hitung"):
 
-            P = (n * R * T) / V if V != 0 else 0
+            if V == 0:
+                st.error(
+                    "Volume tidak boleh 0"
+                )
 
-            st.balloons()
+            else:
 
-            st.markdown(f"""
-            <div class='result'>
+                P = (
+                    n * R * T
+                ) / V
 
-            <h3>Langkah Penyelesaian</h3>
+                st.balloons()
 
-            P = nRT / V <br><br>
+                st.markdown(f"""
+                <div class='result'>
 
-            n = {n}<br>
-            T = {T}<br>
-            V = {V}<br>
-            R = 0.0821<br><br>
+                <h3>Langkah Penyelesaian</h3>
 
-            P = <b>{P:.3f} atm</b>
+                P = nRT / V <br><br>
 
-            </div>
-            """, unsafe_allow_html=True)
+                n = {n} mol<br>
+                T = {T} K<br>
+                V = {V} L<br>
+                R = {R}<br><br>
+
+                P =
+                ({n} × {R} × {T})
+                /
+                {V}<br><br>
+
+                P = <b>{P:.4f} atm</b>
+
+                </div>
+                """, unsafe_allow_html=True)
 
     # =====================================
     # 10 GAS NYATA
@@ -574,34 +671,78 @@ tidak memiliki gaya tarik dan tumbukannya elastis sempurna.
     elif menu == "Gas Nyata":
 
         st.info("""
-Gas nyata adalah gas yang memperhitungkan volume partikel
+Gas nyata adalah gas
+yang memperhitungkan volume partikel
 dan gaya tarik antar molekul.
 """)
 
-        st.latex(r"(P+\frac{an^2}{V^2})(V-nb)=nRT")
+        st.latex(
+            r"(P+\frac{an^2}{V^2})"
+            r"(V-nb)=nRT"
+        )
 
-        n = st.number_input("n", value=0.0)
-        T = st.number_input("T", value=0.0)
-        V = st.number_input("V", value=0.0)
-        a = st.number_input("a", value=0.0)
-        b = st.number_input("b", value=0.000)
+        n = st.number_input(
+            "n (mol)",
+            value=0.0
+        )
+
+        T = st.number_input(
+            "T (K)",
+            value=0.0
+        )
+
+        V = st.number_input(
+            "V (L)",
+            value=0.0
+        )
+
+        a = st.number_input(
+            "a",
+            value=0.0
+        )
+
+        b = st.number_input(
+            "b",
+            value=0.0
+        )
 
         if st.button("Hitung"):
 
             R = 0.0821
 
-            P = ((n * R * T) / (V - n * b)) - ((a * n**2) / (V**2))
+            if V <= (n * b):
+                st.error(
+                    "V harus lebih besar dari nb"
+                )
 
-            st.balloons()
+            elif V == 0:
+                st.error(
+                    "Volume tidak boleh 0"
+                )
 
-            st.markdown(f"""
-            <div class='result'>
+            else:
 
-            <h3>Langkah Penyelesaian</h3>
+                P = (
+                    ((n * R * T) / (V - n * b))
+                    -
+                    ((a * n**2) / (V**2))
+                )
 
-            Persamaan Van der Waals<br><br>
+                st.balloons()
 
-            P = <b>{P:.3f} atm</b>
+                st.markdown(f"""
+                <div class='result'>
 
-            </div>
-            """, unsafe_allow_html=True)
+                <h3>Langkah Penyelesaian</h3>
+
+                Persamaan Van der Waals<br><br>
+
+                P =
+                (nRT / (V − nb))
+                −
+                (an² / V²)<br><br>
+
+                P = <b>{P:.4f} atm</b>
+
+                </div>
+                """, unsafe_allow_html=True)
